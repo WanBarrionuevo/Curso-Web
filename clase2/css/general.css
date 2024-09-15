@@ -1,0 +1,21 @@
+body {
+    font-size: 14px;
+}
+
+a {
+    color: green;
+}
+
+.ejemplo-clase1 {
+    color: blue;
+}
+
+.ejemplo-clase2 {
+    font-weight: bold;
+}
+
+#ejemploDiv {
+    width: 500px;
+    height: 300px;
+    background-color: brown;
+}
