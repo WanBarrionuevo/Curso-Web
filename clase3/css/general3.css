@@ -1,0 +1,67 @@
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.calculator {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#campoTotal {
+    font-weight: bold;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.btn-primary-custom {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+}
+
+.btn-secondary-custom {
+    background-color: #FF9800; /* Naranja */
+    border: none;
+}
+
+.btn-success-custom {
+    background-color: #2196F3; /* Azul */
+    border: none;
+}
+
+.btn-danger-custom {
+    background-color: #F44336; /* Rojo */
+    border: none;
+}
+
+button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    width: 85px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.btn-reset-custom {
+    background-color: #777676; /* Gris */
+    color: white;
+    border: none;
+    }
+
+    button:hover {
+    opacity: 0.9;
+}

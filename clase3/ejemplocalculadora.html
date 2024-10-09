@@ -2,32 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/general3.css" rel="stylesheet">
+    
     <script>
-
-        function sumarDosNumeros() {
-            var campoNumero1 = document.getElementById('campoNumero1');
-            var campoNumero2 = document.getElementById('campoNumero2');
+        function calcular(operacion) {
+            var campoNumero1 = document.getElementById('campoNumero1').value;
+            var campoNumero2 = document.getElementById('campoNumero2').value;
             var campoTotal = document.getElementById('campoTotal');
+            var errorDiv = document.getElementById('divErrores');
+            errorDiv.innerHTML = ''; // Limpiar mensajes de error
 
-            if(campoNumero1.value == '') {
-                document.getElementById('divErrores').innerHTML = 'falta completar el campo numero 1';
-            } else {
-                var valorCampoNumero1 = parseInt(campoNumero1.value);
-                var valorCampoNumero2 = parseInt(campoNumero2.value);
-                var total = valorCampoNumero1 + valorCampoNumero2;
-                campoTotal.value = total;
+            if (campoNumero1 === '' || campoNumero2 === '') {
+                errorDiv.innerHTML = 'Por favor, complete ambos números';
+                return;
             }
+
+            var num1 = parseFloat(campoNumero1);
+            var num2 = parseFloat(campoNumero2);
+            var total = 0;
+
+            switch (operacion) {
+                case 'sumar':
+                    total = num1 + num2;
+                    break;
+                case 'restar':
+                    total = num1 - num2;
+                    break;
+                case 'multiplicar':
+                    total = num1 * num2;
+                    break;
+                case 'dividir':
+                    if (num2 === 0) {
+                        errorDiv.innerHTML = 'No se puede dividir por 0';
+                        return;
+                    }
+                    total = num1 / num2;
+                    break;
+            }
+
+            campoTotal.value = total;
+        }
+
+        function resetCalculadora() {
+            document.getElementById('campoNumero1').value = '';
+            document.getElementById('campoNumero2').value = '';
+            document.getElementById('campoTotal').value = '0';
+            document.getElementById('divErrores').innerHTML = ''; // Limpiar errores
         }
     </script>
 </head>
-<body>
-    <div style="color: red;" id="divErrores"></div>
-    Numero1: <input type="number" value="0" id="campoNumero1"><br>
-    Numero2: <input type="number" value="0" id="campoNumero2"><br>
-    Total: <input type="number" id="campoTotal" value="0" readonly><br>
-    <button type="button" onclick="sumarDosNumeros()">Sumar</button>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="calculator">
+        <h1>Calculadora</h1>
+        <div id="divErrores" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <input type="number" class="form-control" placeholder="Número 1" id="campoNumero1">
+        </div>
+
+        <div class="mb-3">
+            <input type="number" class="form-control" placeholder="Número 2" id="campoNumero2">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="campoTotal" value="0" readonly>
+        </div>
+
+        <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-primary-custom" onclick="calcular('sumar')"><b>+</b></button>
+            <button class="btn btn-secondary-custom" onclick="calcular('restar')"><b>-</b></button>
+            <button class="btn btn-success-custom" onclick="calcular('multiplicar')"><b>*</b></button>
+            <button class="btn btn-danger-custom" onclick="calcular('dividir')"><b>/</b></button>
+        </div>
+
+        <!-- Botón para restablecer -->
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-reset-custom" onclick="resetCalculadora()">Resetear</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+
 </body>
 </html>

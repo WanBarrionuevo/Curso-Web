@@ -1,21 +1,22 @@
 body {
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/clase2/img/fondo.jpg'); /* Cambia esto por tu imagen */
+    background-size: cover; /* La imagen cubre todo el fondo */
+    background-position: center; /* La imagen se centra */
+    min-height: 100vh; /* Asegura que el fondo cubra toda la altura de la ventana */
 }
 
-a {
-    color: green;
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con un poco de transparencia */
+    padding: 30px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: auto; /* Centrar el formulario */
+    position: relative; /* Posicionamiento relativo para el z-index */
+    top: 50%; /* Mover el formulario hacia abajo */
+    transform: translateY(-50%); /* Centrar verticalmente */
 }
-
-.ejemplo-clase1 {
-    color: blue;
-}
-
-.ejemplo-clase2 {
-    font-weight: bold;
-}
-
-#ejemploDiv {
-    width: 500px;
-    height: 300px;
-    background-color: brown;
+.card {
+    background-color: rgb(220, 222, 252); /* Fondo blanco para la tarjeta del formulario */
 }

@@ -1,53 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario</title>
+    <!-- Incluir el CDN de Bootstrap 5 -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/general.css"> <!-- include del css en la pagina!!! -->
+   
 </head>
 <body>
 
-    <h1>Ejemplo de campos de formulario!!!</h1>
+<div class="container">
+    
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Formulario de Registro</h2>
+                    
+                    <form>
+                        <!-- Campo de texto -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre completo" required>
+                        </div>
+                        
+                        <!-- Campo de DNI -->
+                        <div class="mb-3">
+                            <label for="dni" class="form-label">DNI</label>
+                            <input type="text" class="form-control" id="dni" placeholder="Ingresa tu DNI" maxlength="10" required>
+                        </div>
+                        
+                        <!-- Campo de número -->
+                        <div class="mb-3">
+                            <label for="age" class="form-label">Edad</label>
+                            <input type="number" class="form-control" id="age" min="0" max="120" placeholder="Ingresa tu edad" required>
+                        </div>
 
-    <!-- <br> es el salto de linea en HTML -->
-    <!-- Ejemplos generales de input -->
-    <input type="text" value="valor inicial!!!" id="campoEjemplo"><br>
-    <input type="text" placeholder="Nombre completo" name="campoNombre"><br>
-    <input type="text" placeholder="DNI" size="15" maxlength="10" ><br>
-    <input type="text" placeholder="Campo disabled!!..." disabled><br>
-    <input type="text" value="Juan Perez solo lectura" readonly><br>
+                        <!-- Campo de contraseña -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        
+                        <!-- Lista desplegable -->
+                        <div class="mb-3">
+                            <label for="country" class="form-label">País</label>
+                            <select class="form-select" id="country" required>
+                                <option selected disabled>Selecciona tu país</option>
+                                <option value="ar">Argentina</option>
+                                <option value="mx">México</option>
+                                <option value="es">España</option>
+                                <option value="cl">Chile</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Casilla de verificación -->
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label" for="terms">Acepto los términos y condiciones</label>
+                        </div>
+                        
+                        <!-- Botón de envío -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                            
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <hr>
-
-    <!-- Ejemplos por tipos de input -->
-    <input type="number" value="0" min="0" max="1000" ><br>
-    <input type="password"  ><br>
-    <input type="hidden" value="El valor no se ve en la pantalla pero luego lo puedo leer!!!!!" ><br>
-    Check 1:<input type="checkbox" name="checkbox1">
-    Check 2:<input type="checkbox" name="checkbox2">
-    Check 3:<input type="checkbox" name="checkbox3"><br>
-
-    Radio 1:<input type="radio" name="radioEjemplo">
-    Radio 2:<input type="radio" name="radioEjemplo">
-    Radio 3:<input type="radio" name="radioEjemplo"><br>
-
-    <!-- Ejemplos complejos -->
-    <select>
-        <option value="1">Uno</option>
-        <option value="2" selected>Dos</option>
-        <option value="3">Tres</option>
-    </select><br>
-
-    <select multiple>
-        <option value="1">Uno</option>
-        <option value="2" selected>Dos</option>
-        <option value="3" selected>Tres</option>
-    </select><br>
-
-    <textarea cols="10" rows="5">Texto muy pero muy largo!!!!</textarea><br>
-
-    <input type="file">
-
+<!-- Bootstrap JS y Popper.js -->
+<script src="css/bootstrap-grid.min.css"></script>
+<script src="css/general.css"></script>
 </body>
 </html>
+
+
